@@ -55,8 +55,8 @@ $x = $response;
                     <table class="table table-bordered">
                         <tr>
                             <th>Id</th>
-                            <th>Last Name</th>
                             <th>First Name</th>
+                            <th>Last Name</th>
                             <th>Email</th>
                         </tr>
                         <?php for ($i = 0; $i < 2; $i++) { ?>
