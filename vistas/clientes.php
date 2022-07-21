@@ -26,12 +26,12 @@ $x = $response;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>PHP API CRUD opearation</title>
+    <title>Maycar</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -53,7 +53,7 @@ $x = $response;
                     <form action="update.php" method="POST" id="myform">
 
                         <table class="table table-bordered">
-                        <?php for($i=0;$i<5;$i++) {?>
+                        <?php for($i=0;$i<2;$i++) {?>
                         <?php foreach ($response as $list) {
 
                             ?>  
@@ -66,6 +66,10 @@ $x = $response;
                             <?php
                             } ?>
                             <?php }?>
+                            <td>
+                            <a href="edit.php?id=<?php echo $list['id'] ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="delete.php?id=<?php echo $list['id'] ?>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                    </td>
                     </form>
             </div>
         </div>
