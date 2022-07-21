@@ -60,18 +60,16 @@ $x = $response;
                             <th>Email</th>
                         </tr>
                         <?php for ($i = 0; $i < 2; $i++) { ?>
-                            <?php foreach ($response as $list) {
-
-                            ?>
+                            <?php foreach ($response as $list) { ?>
                                 <tr>
                                     <td><?php echo $list[$i]->id; ?></td>
                                     <td><?php echo $list[$i]->firstname; ?></td>
                                     <td><?php echo $list[$i]->lastname; ?></td>
                                     <td><?php echo $list[$i]->email; ?></td>
-                                    < </tr>
-                                    <?php
-                                } ?>
-                                <?php } ?>
+                                </tr>
+                            <?php } ?>
+                        <?php } ?>
+                    </table>     
                 </form>
             </div>
         </div>
@@ -80,11 +78,14 @@ $x = $response;
     <div class="container">
         <div class="row">
             <div class="col-md-12 pt-4">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1190033123418031" crossorigin="anonymous"></script>
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1190033123418031"
+                    crossorigin="anonymous"></script>
                 <!-- live_demo_page -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1190033123418031" data-ad-slot="5335471635" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1190033123418031"
+                    data-ad-slot="5335471635" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
         </div>
