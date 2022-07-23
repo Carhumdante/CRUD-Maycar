@@ -20,8 +20,8 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 
-$response = json_decode($response);
-$x = $response;
+$GET = json_decode($response);
+
 
 ?>
 
@@ -31,7 +31,7 @@ $x = $response;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Maycar</title>
+    <title>Maycar/Employees</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -46,7 +46,7 @@ $x = $response;
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h2> <b>Clientes</b></h2>
+                            <h2> <b>Employees</b></h2>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ $x = $response;
                             <th>Email</th>
                         </tr>
                         <?php for ($i = 0; $i < 2; $i++) { ?>
-                            <?php foreach ($response as $list) { ?>
+                            <?php foreach ($GET as $list) { ?>
                                 <tr>
                                     <td><?php echo $list[$i]->id; ?></td>
                                     <td><?php echo $list[$i]->firstname; ?></td>

@@ -69,10 +69,10 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/stock.php','content-wrapper')">
+                     <a style="cursor: pointer;" class="nav-link" onclick="CargarContenido('vistas/employees.php','content-wrapper')">
                          <i class="nav-icon fas fa-chart-line text-ligth"></i>
                          <p>
-                             Stock
+                             Employees
                          </p>
                      </a>
                  </li>
