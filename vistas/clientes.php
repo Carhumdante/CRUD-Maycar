@@ -52,6 +52,7 @@ $x = $response;
                 </div>
                 <form action="update.php" method="POST" id="myform">
 
+<<<<<<< HEAD
                         <table class="table table-bordered">
                         <?php for($i=0;$i<2;$i++) {?>
                         <?php foreach ($response as $list) {
@@ -70,8 +71,10 @@ $x = $response;
                             <a href="edit.php?id=<?php echo $list['id'] ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <a href="delete.php?id=<?php echo $list['id'] ?>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                     </td>
-                    </form>
+p                    </form>
 
+=======
+>>>>>>> a30f45513626190d173fcb0cddacc35420fab325
                     <table class="table table-bordered">
                         <tr>
                             <th>Id</th>
