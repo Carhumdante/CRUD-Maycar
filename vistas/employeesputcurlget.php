@@ -8,7 +8,7 @@ $passwd = $_POST['passwd'];
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'W611NQ2IFH8BQUY9UN9DL8WW5MVBEV5L@localhost/prestashop/api/employees/'.$id.'?output_format=JSON',
+    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/employees/'.$id.'?output_format=JSON',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -54,7 +54,7 @@ foreach ($GET as $employee) {
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'W611NQ2IFH8BQUY9UN9DL8WW5MVBEV5L@localhost/prestashop/api/employees/2',
+  CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/employees/2',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -107,7 +107,7 @@ echo $response;
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'W611NQ2IFH8BQUY9UN9DL8WW5MVBEV5L@localhost/prestashop/api/employees/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email,id_profile%5D',
+    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/employees/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email,id_profile%5D',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,

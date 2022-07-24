@@ -4,7 +4,7 @@ $id = $_POST['id'];
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'W611NQ2IFH8BQUY9UN9DL8WW5MVBEV5L@localhost/prestashop/api/employees/' . $id . '',
+    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/employees/' . $id . '',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -24,7 +24,7 @@ curl_close($curl);
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'W611NQ2IFH8BQUY9UN9DL8WW5MVBEV5L@localhost/prestashop/api/employees/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email,id_profile%5D',
+    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/employees/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email,id_profile%5D',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
