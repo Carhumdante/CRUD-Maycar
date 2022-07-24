@@ -51,30 +51,40 @@ $GET = json_decode($response);
                         </div>
                     </div>
                 </div>
-                <form action="update.php" method="POST" id="myform">
+                <form action="./vistas/employeesdeletecurl.php" method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Elija el ID del Empleado a Eliminar</label>
+                        <input type="text" class="form-control-sm" name="id" placeholder="Ingrese el ID">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
 
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Id</th>
-                            <th>Id Lang</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Id Profile</th>
-                        </tr>
-                        <?php 
-                            for ($i = 0; $i <= count((array)$GET); $i++) {
-                                foreach ($GET as $employee) {
-                                    echo "<tr>";
-                                    echo "<td>" . $employee[$i]->id . "</td>";
-                                    echo "<td>" . $employee[$i]->id_lang . "</td>";
-                                    echo "<td>" . $employee[$i]->lastname . "</td>";
-                                    echo "<td>" . $employee[$i]->firstname . "</td>";
-                                    echo "<td>" . $employee[$i]->email . "</td>";
-                                    echo "<td>" . $employee[$i]->id_profile . "</td>";
-                                    echo "</tr>";
-                                }
-                            } 
+                <form method="POST" id="myform">
+
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Id</th>
+                                <th>Id Lang</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Id Profile</th>
+                            </tr>
+                        </thead>
+                        <?php
+                        for ($i = 0; $i < count((array)$GET, 1) - 1; $i++) {
+                            foreach ($GET as $employee) {
+                                echo "<tr>";
+                                echo "<td>" . $employee[$i]->id . "</td>";
+                                echo "<td>" . $employee[$i]->id_lang . "</td>";
+                                echo "<td>" . $employee[$i]->lastname . "</td>";
+                                echo "<td>" . $employee[$i]->firstname . "</td>";
+                                echo "<td>" . $employee[$i]->email . "</td>";
+                                echo "<td>" . $employee[$i]->id_profile . "</td>";
+                                echo "</tr>";
+                            }
+                        }
                         ?>
                     </table>
                 </form>

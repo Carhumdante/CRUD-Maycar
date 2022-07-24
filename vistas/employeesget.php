@@ -53,23 +53,25 @@ $GET = json_decode($response);
                 </div>
                 <form action="update.php" method="POST" id="myform">
 
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Id</th>
-                            <th>Id Lang</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Id Profile</th>
-                        </tr>
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Id</th>
+                                <th>Id Lang</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Id Profile</th>
+                            </tr>
+                        </thead>
                         <?php 
                             for ($i = 0; $i < count((array)$GET,1)-1; $i++) {
                                 foreach ($GET as $employee) {
                                     echo "<tr>";
                                     echo "<td>" . $employee[$i]->id . "</td>";
                                     echo "<td>" . $employee[$i]->id_lang . "</td>";
-                                    echo "<td>" . $employee[$i]->lastname . "</td>";
                                     echo "<td>" . $employee[$i]->firstname . "</td>";
+                                    echo "<td>" . $employee[$i]->lastname . "</td>";
                                     echo "<td>" . $employee[$i]->email . "</td>";
                                     echo "<td>" . $employee[$i]->id_profile . "</td>";
                                     echo "</tr>";

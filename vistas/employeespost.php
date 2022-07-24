@@ -23,18 +23,24 @@
                         </div>
                     </div>
                 </div>
-                <form action="./vistas/employeespostcurl.php" method="POST" id="myform">
-
-                    <P>
-                        <LABEL for="nombre">Nombre: </LABEL>
-                        <INPUT type="text" name="nombre"><BR>
-                        <LABEL for="apellido">Apellido: </LABEL>
-                        <INPUT type="text" name="apellido"><BR>
-                        <LABEL for="email">Email: </LABEL>
-                        <INPUT type="text" name="email"><BR>
-                        <LABEL for="passwd">Password: </LABEL>
-                        <INPUT type="pass" name="passwd"><BR>
-                        <INPUT type="submit" value="Enviar"> 
+                <form action="./vistas/employeespostcurl.php" method="POST">
+                    <div class="form-group" >
+                        <label for="firstname">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" placeholder="Ingrese el Nombre">
+                    </div>
+                    <div class="form-group" >
+                        <label for="lastname">Apellido</label>
+                        <input type="text" class="form-control" name="apellido" placeholder="Ingrese el Apellido">
+                    </div>
+                    <div class="form-group" >
+                        <label for="firstname">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="Ingrese el Email">
+                    </div>
+                    <div class="form-group" >
+                        <label for="passwd">Password</label>
+                        <input type="password" class="form-control" name="passwd" placeholder="Ingrese la Contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
