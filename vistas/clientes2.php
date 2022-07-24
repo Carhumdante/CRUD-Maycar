@@ -107,9 +107,9 @@ $x = $response;
                         </thead>
                         <tbody>
                             
-                        <?php for($i=0;$i<count($list);$i++) {?>
+                        <?php for($i=0;$i<5;$i++) {?>
                         <?php foreach ($response as $list) {
-
+                            echo count($list);
                             ?>  
                             <tr>
                             <td><?php echo $list[$i]->id; ?></td>
@@ -117,9 +117,8 @@ $x = $response;
                             <td><?php echo $list[$i]->lastname; ?></td>
                             <td><?php echo $list[$i]->email; ?></td><
                             <td>
-                            <td><a href="edit.php?id=<?php echo $list['id'] ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a></td>
-                            <td><a href="delete.php?id=<?php echo $list['id'] ?>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
-                            </td>
+                            
+                            <td><a onclick="return confirm('Estas seguro de eliminar?');" class="text-danger" href="clientesDELETE.php?codigo=<?php echo $list[3]; ?>"><i class="material-icons">&#xE872;</i></a></td>    
                             </tr>                
                             <?php
                             } ?>

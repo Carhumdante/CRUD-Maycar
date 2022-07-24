@@ -20,3 +20,9 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
+if (isset($result['status']) && isset($result['code'])  && $result['code'] == 10) {
+  $_SESSION['success_mg'] = $result['data'];
+  die();
+  } else {
+  echo $result['data'];
+  }
