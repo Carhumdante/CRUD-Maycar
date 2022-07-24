@@ -51,19 +51,19 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link" style="cursor:pointer;" onclick="CargarContenido('vistas/employeesget.php','content-wrapper')">
+                             <a href="#" class="nav-link" style="cursor:pointer;" onclick="CargarContenido('vistas/employeespost.php','content-wrapper')">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>POST</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link" style="cursor:pointer;" onclick="CargarContenido('vistas/employeesget.php','content-wrapper')">
+                             <a href="#" class="nav-link" style="cursor:pointer;" onclick="CargarContenido('vistas/employeesput.php','content-wrapper')">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>PUT</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link" style="cursor:pointer;" onclick="CargarContenido('vistas/employeesget.php','content-wrapper')">
+                             <a href="#" class="nav-link" style="cursor:pointer;" onclick="CargarContenido('vistas/employeesdelete.php','content-wrapper')">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>DELETE</p>
                              </a>

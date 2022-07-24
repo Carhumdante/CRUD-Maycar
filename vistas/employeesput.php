@@ -47,10 +47,19 @@ $GET = json_decode($response);
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h2> <b>Employees GET</b></h2>
+                            <h2> <b>Employees PUT</b></h2>
                         </div>
                     </div>
                 </div>
+
+                <form action="./vistas/employeesputcurl.php" method="POST" id="myform">
+                    <P>
+                        Elija el ID del Empleado a Modificar
+                        <LABEL for="id">ID: </LABEL>
+                        <INPUT type="text" name="id"><BR>
+                        <INPUT type="submit" value="Enviar"> 
+                    </P>
+                </form>
                 <form action="update.php" method="POST" id="myform">
 
                     <table class="table table-bordered">

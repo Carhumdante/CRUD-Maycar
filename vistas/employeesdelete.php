@@ -47,7 +47,7 @@ $GET = json_decode($response);
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h2> <b>Employees GET</b></h2>
+                            <h2> <b>Employees DELETE</b></h2>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ $GET = json_decode($response);
                             <th>Id Profile</th>
                         </tr>
                         <?php 
-                            for ($i = 0; $i < count((array)$GET,1)-1; $i++) {
+                            for ($i = 0; $i <= count((array)$GET); $i++) {
                                 foreach ($GET as $employee) {
                                     echo "<tr>";
                                     echo "<td>" . $employee[$i]->id . "</td>";
