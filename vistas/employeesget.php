@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/customers?output_format=JSON&display=[id,firstname,lastname,email]',
+    CURLOPT_URL => 'W611NQ2IFH8BQUY9UN9DL8WW5MVBEV5L@localhost/prestashop/api/employees/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email,id_profile%5D',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -12,13 +12,14 @@ curl_setopt_array($curl, array(
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'GET',
     CURLOPT_HTTPHEADER => array(
-        'Cookie: PrestaShop-b495097bf03a2b246a17e22e09a4dd34=def50200597a9629fd5d63f742819b8bda4d9ffe59388d9039c2245876383d97122e2f3f94e7a9906556637a650dff83eff777269856c4227e478c71382083a1954e594be55a8c2261f7e778b872791a7d528ab925d172c7e80db7b5d39597e480a5007cc72f6a76946bdd1bd91615e14e30ba67f740af465ab36873d4cda0714d8f99a045d36442981a95db9be0e2d789c2e03966a39d493741001a5b412eefab128541f22d418471241d04592e44fe9b74d468fbfaaa0e8eaedacaa3ee27f6787902db862f8ca329f27249f14c76a94de73ada780abbff41'
+        'Cookie: PrestaShop-b495097bf03a2b246a17e22e09a4dd34=def502009cb1a69d9f205ac414b38df41df1deaf3da3f044d3d29d8bc0c0c939bed3ca64ec2daf627390a6be74b883d8f5bebeb2b47725c7fd7a7bededd86c6e10fbeba933741566c3e3a0ef23e3980599ba3af065acd4d77059cf1d918d727dbed7e167dee41cad2c0f224a6f1aef2f53311bf89fd7149d041f902a2e290cf2a2c0a9981aeb0c67f0da54817b2f4086428a1f0218bf2c588105fba6bc99b0d42d70485251671d8f0e0ef0049a20acc0f1cfc5762e271447c59131bd341d12a4ace19a3e9bb259c1459d102b926c790e83489bad5e7f74e097'
     ),
 ));
 
 $response = curl_exec($curl);
 
 curl_close($curl);
+
 
 $GET = json_decode($response);
 
@@ -46,7 +47,7 @@ $GET = json_decode($response);
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h2> <b>Employees</b></h2>
+                            <h2> <b>EmployeesGET</b></h2>
                         </div>
                     </div>
                 </div>
@@ -55,21 +56,27 @@ $GET = json_decode($response);
                     <table class="table table-bordered">
                         <tr>
                             <th>Id</th>
+                            <th>Id Lang</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
+                            <th>Id Profile</th>
                         </tr>
-                        <?php for ($i = 0; $i < 2; $i++) { ?>
-                            <?php foreach ($GET as $list) { ?>
-                                <tr>
-                                    <td><?php echo $list[$i]->id; ?></td>
-                                    <td><?php echo $list[$i]->firstname; ?></td>
-                                    <td><?php echo $list[$i]->lastname; ?></td>
-                                    <td><?php echo $list[$i]->email; ?></td>
-                                </tr>
-                            <?php } ?>
-                        <?php } ?>
-                    </table>     
+                        <?php 
+                            for ($i = 0; $i <= count((array)$GET); $i++) {
+                                foreach ($GET as $employee) {
+                                    echo "<tr>";
+                                    echo "<td>" . $employee[$i]->id . "</td>";
+                                    echo "<td>" . $employee[$i]->id_lang . "</td>";
+                                    echo "<td>" . $employee[$i]->lastname . "</td>";
+                                    echo "<td>" . $employee[$i]->firstname . "</td>";
+                                    echo "<td>" . $employee[$i]->email . "</td>";
+                                    echo "<td>" . $employee[$i]->id_profile . "</td>";
+                                    echo "</tr>";
+                                }
+                            } 
+                        ?>
+                    </table>
                 </form>
             </div>
         </div>
@@ -78,14 +85,11 @@ $GET = json_decode($response);
     <div class="container">
         <div class="row">
             <div class="col-md-12 pt-4">
-                <script async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1190033123418031"
-                    crossorigin="anonymous"></script>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1190033123418031" crossorigin="anonymous"></script>
                 <!-- live_demo_page -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1190033123418031"
-                    data-ad-slot="5335471635" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1190033123418031" data-ad-slot="5335471635" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
         </div>
