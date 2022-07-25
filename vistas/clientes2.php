@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/customers?output_format=JSON&display=[id,firstname,lastname,email]',
+  CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/customers/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email,id_profile%5D',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -20,8 +20,7 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 
-$response = json_decode($response);
-$x = $response;
+$result = json_decode($response);
 
 ?>
 <div class="container mt-5">
@@ -100,33 +99,27 @@ $x = $response;
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Edad</th>
-                                <th scope="col">Signo</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Email</th>
                                 <th scope="col" colspan="2">Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             
-                        <?php for($i=0;$i<5;$i++) {?>
-                        <?php foreach ($response as $list) {
-                            echo count($list);
+                        <?php for ($i = 0; $i < count((array)$result,1)-1; $i++) {
+                         foreach ($result as $list) {
                             ?>  
                             <tr>
                             <td><?php echo $list[$i]->id; ?></td>
                             <td><?php echo $list[$i]->firstname; ?></td>
                             <td><?php echo $list[$i]->lastname; ?></td>
-                            <td><?php echo $list[$i]->email; ?></td><
-                            <td>
-                            
-                            <td><a onclick="return confirm('Estas seguro de eliminar?');" class="text-danger" href="clientesDELETE.php?codigo=<?php echo $list[3]; ?>"><i class="material-icons">&#xE872;</i></a></td>    
+                            <td><?php echo $list[$i]->email; ?></td>                
                             </tr>                
                             <?php
-                            } ?>
-                            <?php }?>
-
+                            } 
+                         }?>
                         </tbody>
-                    </table>
-                    
+                    </table>                
                 </div>
             </div>
         </div>
@@ -135,17 +128,17 @@ $x = $response;
                 <div class="card-header">
                     Ingresar datos:
                 </div>
-                <form class="p-4" method="POST" action="registrar.php">
+                <form class="p-4" method="POST" action="./cURL/clientesPOST.php">
                     <div class="mb-3">
                         <label class="form-label">Nombre: </label>
                         <input type="text" class="form-control" name="txtNombre" autofocus required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Edad: </label>
+                        <label class="form-label">Apellido: </label>
                         <input type="number" class="form-control" name="txtEdad" autofocus required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Signo: </label>
+                        <label class="form-label">Correo: </label>
                         <input type="text" class="form-control" name="txtSigno" autofocus required>
                     </div>
                     <div class="d-grid">

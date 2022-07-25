@@ -1,41 +1,3 @@
-<?php
-
-$id = $_POST['id'];
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/employees/'.$id.'?output_format=JSON',
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => '',
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => 'GET',
-    CURLOPT_HTTPHEADER => array(
-        'Cookie: PrestaShop-b495097bf03a2b246a17e22e09a4dd34=def502009cb1a69d9f205ac414b38df41df1deaf3da3f044d3d29d8bc0c0c939bed3ca64ec2daf627390a6be74b883d8f5bebeb2b47725c7fd7a7bededd86c6e10fbeba933741566c3e3a0ef23e3980599ba3af065acd4d77059cf1d918d727dbed7e167dee41cad2c0f224a6f1aef2f53311bf89fd7149d041f902a2e290cf2a2c0a9981aeb0c67f0da54817b2f4086428a1f0218bf2c588105fba6bc99b0d42d70485251671d8f0e0ef0049a20acc0f1cfc5762e271447c59131bd341d12a4ace19a3e9bb259c1459d102b926c790e83489bad5e7f74e097'
-    ),
-));
-
-$response = curl_exec($curl);
-
-curl_close($curl);
-
-
-$GET = json_decode($response);
-
-foreach ($GET as $employee) {
-    $id  = $employee-> id;
-    $passwd = $employee-> passwd;
-    $lastname = $employee-> lastname;
-    $firstname = $employee-> firstname;
-    $email = $employee-> email;
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -61,28 +23,24 @@ foreach ($GET as $employee) {
                         </div>
                     </div>
                 </div>
-                <form action="./employeesputcurlget.php" method="POST">
-                    <div class="form-group" >
-                        <label for="id">ID</label>
-                        <input type="text" class="form-control" name="id" readonly value = <?php echo $id; ?>>
-                    </div>
+                <form action="./cURL/Empleados/employeespostcurl.php" method="POST">
                     <div class="form-group" >
                         <label for="firstname">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" placeholder="Ingrese el Nombre" value = <?php echo $firstname; ?>>
+                        <input type="text" class="form-control" name="nombre" placeholder="Ingrese el Nombre">
                     </div>
                     <div class="form-group" >
                         <label for="lastname">Apellido</label>
-                        <input type="text" class="form-control" name="apellido" placeholder="Ingrese el Apellido" value = <?php echo $lastname; ?>>
+                        <input type="text" class="form-control" name="apellido" placeholder="Ingrese el Apellido">
                     </div>
                     <div class="form-group" >
                         <label for="firstname">Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="Ingrese el Email" value = <?php echo $email; ?>>
-                    </div> 
+                        <input type="email" class="form-control" name="email" placeholder="Ingrese el Email">
+                    </div>
                     <div class="form-group" >
                         <label for="passwd">Password</label>
-                        <input type="password" class="form-control" name="passwd" placeholder="Ingrese la Contraseña" readonly value = <?php echo $passwd; ?>>
+                        <input type="password" class="form-control" name="passwd" placeholder="Ingrese la Contraseña">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>
         </div>

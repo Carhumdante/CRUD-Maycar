@@ -51,12 +51,12 @@ $GET = json_decode($response);
                         </div>
                     </div>
                 </div>
-                <form action="./vistas/employeesdeletecurl.php" method="POST">
+                <form action="./cURL/Empleados/employeesdeletecurl.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Elija el ID del Empleado a Eliminar</label>
                         <input type="text" class="form-control-sm" name="id" placeholder="Ingrese el ID">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Eliminar</button>
                 </form>
 
                 <form method="POST" id="myform">
