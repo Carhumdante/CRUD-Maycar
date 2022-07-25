@@ -25,29 +25,37 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 
-$list = json_decode($response);
+$result = json_decode($response);
 
-foreach ($list as $list) {
-    $id_lang  = $list-> id_lang;
+foreach ($result as $list) {
+    $id_default_group = $list-> id_default_group;
+    $id_lang = $list-> id_lang;
+    $newsletter_date = $list-> newsletter_date;
+    $ip_registration_newsletter = $list-> ip_registration_newsletter;
+    $deleted = $list-> deleted;
+    $passwd = $list-> passwd;
+    $id_gender  = $list-> id_gender;
+    $birthday = $list-> birthday;
     $last_passwd_gen = $list-> last_passwd_gen;
-    $stats_date_from = $list-> stats_date_from;
-    $stats_date_to = $list-> stats_date_to;
+    $newsletter = $list-> newsletter;
+    $optin = $list-> optin;
+    $website = $list-> website;
+    $company = $list-> company;
+    $siret = $list-> siret;
+    $ape = $list-> ape;
+    $outstanding_allow_amount = $list-> outstanding_allow_amount;
+    $show_public_prices = $list-> show_public_prices;
+    $id_risk = $list-> id_risk;
+    $max_payment_days = $list-> max_payment_days;
     $active = $list-> active;
-    $id_profile = $list-> id_profile;
-    $bo_color = $list-> bo_color;
-    $default_tab = $list-> default_tab;
-    $bo_theme = $list-> bo_theme;
-    $bo_css = $list-> bo_css;
-    $bo_width = $list-> bo_width;
-    $bo_menu = $list-> bo_menu;
-    $stats_compare_option = $list-> stats_compare_option;
-    $preselect_date_range = $list-> preselect_date_range;
-    $id_last_order = $list-> id_last_order;
-    $id_last_customer_message = $list-> id_last_customer_message;
-    $id_last_customer = $list-> id_last_customer;
+    $note = $list-> note;
+    $is_guest = $list-> is_guest;
+    $id_shop = $list-> id_shop;
+    $id_shop_group = $list-> id_shop_group;
+    $date_add = $list-> date_add;
+    $date_upd = $list-> date_upd;
     $reset_password_token = $list-> reset_password_token;
     $reset_password_validity = $list-> reset_password_validity;
-    $has_enabled_gravatar = $list-> has_enabled_gravatar;
 }
 
 $curl = curl_init();
@@ -64,39 +72,38 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS =>'<?xml version="1.0" encoding="UTF-8"?>
 <prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
 <customer>
-	<id><![CDATA[4]]></id>
-	<id_default_group><![CDATA[0]]></id_default_group>
-	<id_lang xlink:href="http://localhost/prestashop/api/languages/1"><![CDATA[1]]></id_lang>
-	<newsletter_date_add><![CDATA[0000-00-00 00:00:00]]></newsletter_date_add>
-	<ip_registration_newsletter><![CDATA[]]></ip_registration_newsletter>
-	<last_passwd_gen><![CDATA[2022-07-23 06:33:22]]></last_passwd_gen>
-	<secure_key><![CDATA[94e376fbf6ab35dc03fc814d1be25d05]]></secure_key>
-	<deleted><![CDATA[0]]></deleted>
-	<passwd><![CDATA[$2y$10$hgD3BFDlHSxPBvRmFyyvFOHCzs/B9CZ9/aQd4jMf3kpOeLKgKIcSW]]></passwd>
-	<lastname><![CDATA[Real]]></lastname>
-	<firstname><![CDATA[Customer]]></firstname>
-	<email><![CDATA[elanonimatonto@gmail.com]]></email>
-	<id_gender><![CDATA[0]]></id_gender>
-	<birthday><![CDATA[0000-00-00]]></birthday>
-	<newsletter><![CDATA[0]]></newsletter>
-	<optin><![CDATA[0]]></optin>
-	<website><![CDATA[]]></website>
-	<company><![CDATA[]]></company>
-	<siret><![CDATA[]]></siret>
-	<ape><![CDATA[]]></ape>
-	<outstanding_allow_amount><![CDATA[0.000000]]></outstanding_allow_amount>
-	<show_public_prices><![CDATA[0]]></show_public_prices>
-	<id_risk><![CDATA[0]]></id_risk>
-	<max_payment_days><![CDATA[0]]></max_payment_days>
-	<active><![CDATA[0]]></active>
-	<note><![CDATA[]]></note>
-	<is_guest><![CDATA[0]]></is_guest>
-	<id_shop><![CDATA[1]]></id_shop>
-	<id_shop_group><![CDATA[1]]></id_shop_group>
-	<date_add><![CDATA[2022-07-23 12:33:22]]></date_add>
-	<date_upd><![CDATA[2022-07-23 12:33:22]]></date_upd>
-	<reset_password_token><![CDATA[]]></reset_password_token>
-	<reset_password_validity><![CDATA[0000-00-00 00:00:00]]></reset_password_validity>
+	<id><![CDATA['.$id']]></id>
+	<id_default_group><![CDATA['.$id_default_group']]></id_default_group>
+	<id_lang><![CDATA['.$id_lang']]></id_lang>
+	<newsletter_date_add><![CDATA['.$newsletter_date']]></newsletter_date_add>
+	<ip_registration_newsletter><![CDATA['.$ip_registration_newsletter']]></ip_registration_newsletter>
+	<last_passwd_gen><![CDATA['.$last_passwd_gen.']]></last_passwd_gen>
+	<deleted><![CDATA['.$deleted']]></deleted>
+	<passwd><![CDATA['.$passwd.']]></passwd>
+	<lastname><![CDATA['.$lastname.']]></lastname>
+	<firstname><![CDATA['.$firstname.']]></firstname>
+	<email><![CDATA['.$email.']]></email>
+	<id_gender><![CDATA['.$id_gender']]></id_gender>
+	<birthday><![CDATA['.$birthday']]></birthday>
+	<newsletter><![CDATA['.$newsletter']]></newsletter>
+	<optin><![CDATA['.$optin']]></optin>
+	<website><![CDATA['.$website']]></website>
+	<company><![CDATA['.$company']]></company>
+	<siret><![CDATA['.$siret']]></siret>
+	<ape><![CDATA['.$ape']]></ape>
+	<outstanding_allow_amount><![CDATA['.$outstanding_allow_amount.']]></outstanding_allow_amount>
+	<show_public_prices><![CDATA['.$show_public_prices']]></show_public_prices>
+	<id_risk><![CDATA['.$id_risk']]></id_risk>
+	<max_payment_days><![CDATA['.$max_payment_days']]></max_payment_days>
+	<active><![CDATA['.$active']]></active>
+	<note><![CDATA['.$note']]></note>
+	<is_guest><![CDATA['.$is_guest']]></is_guest>
+	<id_shop><![CDATA['.$id_shop']]></id_shop>
+	<id_shop_group><![CDATA['.$id_shop_group']]></id_shop_group>
+	<date_add><![CDATA['.$date_add']]></date_add>
+	<date_upd><![CDATA['.$date_upd']]></date_upd>
+	<reset_password_token><![CDATA['.$reset_password_token']]></reset_password_token>
+	<reset_password_validity><![CDATA['.$reset_password_validity']]></reset_password_validity>
 <associations>
 <groups nodeType="group" api="groups"/>
 </associations>

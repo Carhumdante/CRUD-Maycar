@@ -49,7 +49,7 @@ $result = json_decode($response);
                         </div>
                     </div>
                 </div>
-                <form action="./cURL/Empleados/employeesputcurl.php" method="POST">
+                <form action="./cURL/Clientes/clientesputcurl.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Elija el ID del Cliente a Actualizar</label>
                         <input type="text" class="form-control-sm" name="id" placeholder="Ingrese el ID">

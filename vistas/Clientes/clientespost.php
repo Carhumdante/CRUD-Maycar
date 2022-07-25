@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="./cURL/Empleados/employeespostcurl.php" method="POST">
+                <form action="./cURL/Clientes/clientespostcurl.php" method="POST">
                     <div class="form-group" >
                         <label for="firstname">Nombre</label>
                         <input type="text" class="form-control" name="nombre" placeholder="Ingrese el Nombre">
