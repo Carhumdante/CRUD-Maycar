@@ -24,7 +24,7 @@ curl_close($curl);
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/ecustomers/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email,id_profile%5D',
+    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/customers/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email%5D',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -66,51 +66,50 @@ $result = json_decode($response);
             <div class="card">
                 <div class="card-header"> Clientes DELETE </div>
                 <div class="p-4">
-                    <table class="table align-middle">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido</th>
-                                <th scope="col">Email</th>
-                            </tr>
-                        </thead>
-                        <tbody>   
-                        <?php for ($i = 0; $i < count((array)$result,1)-1; $i++) {
-                         foreach ($result as $list) {
-                            ?>  
-                            <tr>
-                            <td><?php echo $list[$i]->id; ?></td>
-                            <td><?php echo $list[$i]->firstname; ?></td>
-                            <td><?php echo $list[$i]->lastname; ?></td>
-                            <td><?php echo $list[$i]->email; ?></td>                
-                            </tr>                
-                            <?php
-                            } 
-                         }?>
-                        </tbody>
-                    </table>    
-                    <button type="submit" class="btn btn-primary">Inicio</button>            
+                    <form action="/crud-maycar">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php for ($i = 0; $i < count((array)$result, 1) - 1; $i++) {
+                                    foreach ($result as $list) {
+                                ?>
+                                        <tr>
+                                            <td><?php echo $list[$i]->id; ?></td>
+                                            <td><?php echo $list[$i]->firstname; ?></td>
+                                            <td><?php echo $list[$i]->lastname; ?></td>
+                                            <td><?php echo $list[$i]->email; ?></td>
+                                        </tr>
+                                <?php
+                                    }
+                                } ?>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-primary">Inicio</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 </div>
 <div class="container">
-        <div class="row">
-            <div class="col-md-12 pt-4">
-                <script async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1190033123418031"
-                    crossorigin="anonymous"></script>
-                <!-- live_demo_page -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1190033123418031"
-                    data-ad-slot="5335471635" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
+    <div class="row">
+        <div class="col-md-12 pt-4">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1190033123418031" crossorigin="anonymous"></script>
+            <!-- live_demo_page -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1190033123418031" data-ad-slot="5335471635" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
+            </script>
         </div>
     </div>
+</div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

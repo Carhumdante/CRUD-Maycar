@@ -3,6 +3,7 @@
 $lastname = $_POST['apellido'];
 $firstname = $_POST['nombre'];
 $email = $_POST['email'];
+$passwd = $_POST['passwd'];
 
 $curl = curl_init();
 
@@ -42,7 +43,7 @@ curl_close($curl);
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/customers/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email,id_profile%5D',
+    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/customers/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email%5D',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -60,7 +61,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 
-$list = json_decode($response);
+$result = json_decode($response);
 
 
 

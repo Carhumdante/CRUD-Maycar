@@ -30,7 +30,7 @@ $result = json_decode($response);
 foreach ($result as $list) {
     $id_default_group = $list-> id_default_group;
     $id_lang = $list-> id_lang;
-    $newsletter_date = $list-> newsletter_date;
+    $newsletter_date_add = $list-> newsletter_date_add;
     $ip_registration_newsletter = $list-> ip_registration_newsletter;
     $deleted = $list-> deleted;
     $passwd = $list-> passwd;
@@ -61,7 +61,7 @@ foreach ($result as $list) {
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'W611NQ2IFH8BQUY9UN9DL8WW5MVBEV5L@localhost/prestashop/api/customers/4',
+  CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/customers/'.$id.'',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -72,38 +72,38 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS =>'<?xml version="1.0" encoding="UTF-8"?>
 <prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
 <customer>
-	<id><![CDATA['.$id']]></id>
-	<id_default_group><![CDATA['.$id_default_group']]></id_default_group>
-	<id_lang><![CDATA['.$id_lang']]></id_lang>
-	<newsletter_date_add><![CDATA['.$newsletter_date']]></newsletter_date_add>
-	<ip_registration_newsletter><![CDATA['.$ip_registration_newsletter']]></ip_registration_newsletter>
+	<id><![CDATA['.$id.']]></id>
+	<id_default_group><![CDATA['.$id_default_group.']]></id_default_group>
+	<id_lang><![CDATA['.$id_lang.']]></id_lang>
+	<newsletter_date_add><![CDATA['.$newsletter_date_add.']]></newsletter_date_add>
+	<ip_registration_newsletter><![CDATA['.$ip_registration_newsletter.']]></ip_registration_newsletter>
 	<last_passwd_gen><![CDATA['.$last_passwd_gen.']]></last_passwd_gen>
-	<deleted><![CDATA['.$deleted']]></deleted>
+	<deleted><![CDATA['.$deleted.']]></deleted>
 	<passwd><![CDATA['.$passwd.']]></passwd>
 	<lastname><![CDATA['.$lastname.']]></lastname>
 	<firstname><![CDATA['.$firstname.']]></firstname>
 	<email><![CDATA['.$email.']]></email>
-	<id_gender><![CDATA['.$id_gender']]></id_gender>
-	<birthday><![CDATA['.$birthday']]></birthday>
-	<newsletter><![CDATA['.$newsletter']]></newsletter>
-	<optin><![CDATA['.$optin']]></optin>
-	<website><![CDATA['.$website']]></website>
-	<company><![CDATA['.$company']]></company>
-	<siret><![CDATA['.$siret']]></siret>
-	<ape><![CDATA['.$ape']]></ape>
+	<id_gender><![CDATA['.$id_gender.']]></id_gender>
+	<birthday><![CDATA['.$birthday.']]></birthday>
+	<newsletter><![CDATA['.$newsletter.']]></newsletter>
+	<optin><![CDATA['.$optin.']]></optin>
+	<website><![CDATA['.$website.']]></website>
+	<company><![CDATA['.$company.']]></company>
+	<siret><![CDATA['.$siret.']]></siret>
+	<ape><![CDATA['.$ape.']]></ape>
 	<outstanding_allow_amount><![CDATA['.$outstanding_allow_amount.']]></outstanding_allow_amount>
-	<show_public_prices><![CDATA['.$show_public_prices']]></show_public_prices>
-	<id_risk><![CDATA['.$id_risk']]></id_risk>
-	<max_payment_days><![CDATA['.$max_payment_days']]></max_payment_days>
-	<active><![CDATA['.$active']]></active>
-	<note><![CDATA['.$note']]></note>
-	<is_guest><![CDATA['.$is_guest']]></is_guest>
-	<id_shop><![CDATA['.$id_shop']]></id_shop>
-	<id_shop_group><![CDATA['.$id_shop_group']]></id_shop_group>
-	<date_add><![CDATA['.$date_add']]></date_add>
-	<date_upd><![CDATA['.$date_upd']]></date_upd>
-	<reset_password_token><![CDATA['.$reset_password_token']]></reset_password_token>
-	<reset_password_validity><![CDATA['.$reset_password_validity']]></reset_password_validity>
+	<show_public_prices><![CDATA['.$show_public_prices.']]></show_public_prices>
+	<id_risk><![CDATA['.$id_risk.']]></id_risk>
+	<max_payment_days><![CDATA['.$max_payment_days.']]></max_payment_days>
+	<active><![CDATA['.$active.']]></active>
+	<note><![CDATA['.$note.']]></note>
+	<is_guest><![CDATA['.$is_guest.']]></is_guest>
+	<id_shop><![CDATA['.$id_shop.']]></id_shop>
+	<id_shop_group><![CDATA['.$id_shop_group.']]></id_shop_group>
+	<date_add><![CDATA['.$date_add.']]></date_add>
+	<date_upd><![CDATA['.$date_upd.']]></date_upd>
+	<reset_password_token><![CDATA['.$reset_password_token.']]></reset_password_token>
+	<reset_password_validity><![CDATA['.$reset_password_validity.']]></reset_password_validity>
 <associations>
 <groups nodeType="group" api="groups"/>
 </associations>
@@ -124,7 +124,7 @@ echo $response;
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/customers/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email,id_profile%5D',
+    CURLOPT_URL => 'PPY3PFCXSNK6LNJZ7GRQIRXEWYYMJCPC@10.0.0.199/workgroup2/presta/api/customers/?output_format=JSON&display=%5Bid,id_lang,firstname,lastname,email%5D',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -142,7 +142,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 
-$list = json_decode($response);
+$result = json_decode($response);
 
 
 ?>

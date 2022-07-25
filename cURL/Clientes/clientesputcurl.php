@@ -60,7 +60,7 @@ foreach ($result as $list) {
                         </div>
                     </div>
                 </div>
-                <form action="./listsputcurlget.php" method="POST">
+                <form action="./clientesputcurlget.php" method="POST">
                     <div class="form-group" >
                         <label for="id">#</label>
                         <input type="text" class="form-control" name="id" readonly value = <?php echo $id; ?>>
