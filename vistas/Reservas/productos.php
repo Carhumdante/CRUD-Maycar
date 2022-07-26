@@ -121,7 +121,7 @@
                             <th>P. Compra</th>
                             <th>P. Venta</th>
                             <th>Utilidad</th>
-                            <th>Stock</th>
+                            <th>Stock   </th>
                             <th>Min. Stock</th>
                             <th>Ventas</th>
                             <th>Fecha Creación</th>

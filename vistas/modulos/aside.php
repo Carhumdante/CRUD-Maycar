@@ -21,6 +21,22 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a style="cursor: pointer;" class="nav-link active" onclick="CargarContenido('vistas/Reservas/productos.php','content-wrapper')">
+                        <i class="fas fa-barcode"></i>
+                        <p>
+                            Productos
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a style="cursor: pointer;" class="nav-link active" onclick="CargarContenido('vistas/productos.php','content-wrapper')">
+                        <i class="fas fa-barcode"></i>
+                        <p>
+                            Productos
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-store-alt"></i>
                         <p>Clientes<i class="right fas fa-angle-left"></i></p>
