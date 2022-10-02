@@ -1,5 +1,5 @@
 <?php
-/*
+
 $id = $_POST['id'];
 $firstname = $_POST['nombre'];
 $lastname = $_POST['apellido'];
@@ -146,7 +146,7 @@ curl_close($curl);
 $result = json_decode($response);
 
 
-*/?>
+?>
 <!DOCTYPE html>
 <html lang="es">
 
